@@ -1,0 +1,44 @@
+.Main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 1px;
+    border-color: #b1b1b1;
+    height: 55px;
+    color: #ffffff;
+}
+
+.Logo img{
+    height: 160px;
+    
+    margin: 0;
+    align-items: start;
+    margin-left: 10px;
+    width: 350px;
+}
+
+.Links{
+    display: flex;
+    gap: 30px;
+    margin-right: 80px;
+}
+
+.Link{
+    text-decoration: none;
+    color: #262626;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.Login{
+    text-decoration: none;
+    color: #2a8e81;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.Links a:hover{
+    color: #818181;
+}
