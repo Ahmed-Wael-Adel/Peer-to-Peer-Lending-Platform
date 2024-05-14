@@ -10,7 +10,7 @@ function Navbar(){
                 <a href="/" className="Link">HOME</a>
                 <a href="/Sign_up" className="Link">SIGN UP</a>
                 <a href="/About" className="Link">ABOUT</a>
-                <a href="/Log_in" className="Login">LOG IN</a>
+                <a href="/Login" className="Login">LOG IN</a>
             </div>
         </div>
     )

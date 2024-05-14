@@ -1,0 +1,43 @@
+.LenderPage{
+    background-color: #eefffc;
+    height: 100vh;
+    margin-top: 0px;
+}
+
+.Loan-Offer{
+    display: flex;
+    justify-content: end;
+    margin: 40px 300px;
+}
+
+.Loan-Offer button{
+    width: 230px;
+    height: 45px;
+    text-align: center;
+    background-color: #2a8e81;
+    font-size: 18px;
+    font-weight: 500;
+    color: #f7f7f7;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+.loan-list{
+    display: flex;
+    flex-direction: column;
+    border : 0.5px solid ;
+    border-color: black;
+    gap: 10px;
+    padding-left: 20px;
+    background-color: #ffffff;
+}
+.loan-list span {
+    color: #262626;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.loan-list:hover{
+    background-color: #e9e9e9;
+}
