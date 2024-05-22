@@ -4,7 +4,8 @@ import createError from "../utils/createError.js";
 export const verifyToken = (req, res, next) => { 
     
     const token = req.cookies.accessToken;
-
+    console.log(req.cookies.accessToken)
+    console.log(token)
     if (!token) return next(createError(401, "Unauthorized"));
 
     jwt.verify(token, process.env.SECRET_KEY, (err, payload) => {

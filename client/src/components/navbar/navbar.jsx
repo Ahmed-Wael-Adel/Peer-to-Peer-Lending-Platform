@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import newRequest from '../../../utils/newRequest';
 
 const Navbar = () => {
   // Sample state to represent whether the user is logged in
@@ -8,7 +9,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const response = async () => {
-      await axios.get('http://localhost:3000/server/auth/checkLogin').then((res) => {
+      await newRequest.get('auth/checkLogin').then((res) => {
         console.log(res.data)
         return res.data
       })

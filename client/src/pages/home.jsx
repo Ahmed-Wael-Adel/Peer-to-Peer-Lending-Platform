@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import newRequest from '../../utils/newRequest';
 
 const Home = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -9,7 +10,7 @@ const Home = () => {
     useEffect(() => {
         const fetchLoans = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/server/loans/getLoans');
+                const response = await newRequest.get('loans/getLoans');
                 console.log(response.data)
                 setOptionalLoans(response.data);
             } catch (error) {

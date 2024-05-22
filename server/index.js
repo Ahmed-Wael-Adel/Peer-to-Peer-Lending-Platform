@@ -9,10 +9,10 @@ import loansRoute from '../server/routes/loan.route.js'
 
 const app = express();
 dotenv.config();
-mongoose.set('strictQuery',true)
+mongoose.set('strictQuery', true)
 
 
-const connect = async () => { 
+const connect = async () => {
     try {
         await mongoose.connect(process.env.MONGO)
         console.log('Connected to database');
@@ -29,7 +29,7 @@ app.use(cors({
 }));
 
 app.use("/server/auth", authRoute)
-app.use("/server/loans",loansRoute)
+app.use("/server/loans", loansRoute)
 
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;
@@ -40,5 +40,5 @@ app.use((err, req, res, next) => {
 
 app.listen(3000, () => {
     connect();
-  console.log('Server is running on port 3000');
+    console.log('Server is running on port 3000');
 });

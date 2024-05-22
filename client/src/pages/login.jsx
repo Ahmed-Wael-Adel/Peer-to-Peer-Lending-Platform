@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
+import newRequest from '../../utils/newRequest';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ const Login = () => {
   const handleRegistration = async (data) => {
     console.log(data)
     try {
-      await axios.post('http://localhost:3000/server/auth/login', {
+      await newRequest.post('auth/login', {
         password: data.password,
         email: data.email
       })
