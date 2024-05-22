@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import authRoute from '../server/routes/auth.route.js'
+import loansRoute from '../server/routes/loan.route.js'
 
 
 const app = express();
@@ -28,6 +29,7 @@ app.use(cors({
 }));
 
 app.use("/server/auth", authRoute)
+app.use("/server/loans",loansRoute)
 
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;

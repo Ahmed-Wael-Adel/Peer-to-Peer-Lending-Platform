@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Home = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
     const [optionalLoans, setOptionalLoans] = useState([]);
     const [selectedLoan, setSelectedLoan] = useState(null);
 
     useEffect(() => {
         const fetchLoans = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/server/auth/getLoans');
+                const response = await axios.get('http://localhost:3000/server/loans/getLoans');
+                console.log(response.data)
                 setOptionalLoans(response.data);
             } catch (error) {
                 console.error('Error fetching loans:', error);

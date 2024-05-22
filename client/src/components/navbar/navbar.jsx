@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   // Sample state to represent whether the user is logged in
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  useEffect(() => {
+    const response = async () => {
+      await axios.get('http://localhost:3000/server/auth/checkLogin').then((res) => {
+        console.log(res.data)
+        return res.data
+      })
+    }
+    response()
+  })
 
   return (
     <nav className="bg-blue-800 p-4">
@@ -21,13 +32,13 @@ const Navbar = () => {
               <Link to="/dashboard" className="text-white hover:text-blue-200">Dashboard</Link>
               <Link to="/createloan" className="text-white hover:text-blue-200">create loan</Link>
               <Link to="/Lprofile" className="text-white hover:text-blue-200">Lender profile</Link>
-              <button 
-                onClick={() => setIsLoggedIn(false)} 
+              <button
+                onClick={() => setIsLoggedIn(false)}
                 className="text-white hover:text-blue-200"
               >
                 Logout
               </button>
-              
+
             </>
           ) : (
             <>
